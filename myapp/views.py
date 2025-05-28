@@ -8,3 +8,5 @@ def indexview(request):
         'hero_area':hero_area
     }
     return render(request,'index.html',contex)
+def About_view(request):
+    return render(request,'about.html')

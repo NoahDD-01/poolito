@@ -3,4 +3,5 @@ from .import views
 
 urlpatterns = [
     path('', views.indexview , name = 'home'), 
+    path('about/',views.About_view, name = 'about'),
 ]
