@@ -4,8 +4,12 @@ from .models import *
 # Create your views here.
 def indexview(request):
     hero_area = HearArea.objects.all().order_by('-id')[:1]
+    service1 = Service1.objects.all().order_by('-id')[:4]
+    gallery = Gallery.objects.all().order_by('-id')[:1]
     contex = {
-        'hero_area':hero_area
+        'hero_area':hero_area ,
+        'service1' : service1,
+        'gallery' : gallery
     }
     return render(request,'index.html',contex)
 def About_view(request):
@@ -17,3 +21,6 @@ def blog_view(request):
         'blog':blog
     }
     return render(request,'blog.html',contex)
+
+def service_view(request):
+    return render(request,'service.html')

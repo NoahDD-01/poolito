@@ -52,18 +52,20 @@
             <div class="container">
                 <div class="service-inner">
                     <div class="row gx-0 wow animate__fadeInUp" data-wow-delay="0.35s">
+                    {% for i in service1 %}
                         <div class="col-lg-3 col-md-6 service-style3">
                             <div class="service-content border-right">
-                                <div class="icon-btn3"> <span class="icon"><img src="{% static 'assets/img/icon/service-icon-3-1.svg' %}" alt="service-icon"></span></div>
-                                <h2 class="service-title"><a href="service.html">window-cleaning</a></h2>
-                                <p class="service-text">back and relax heall your freshly cleaned carpets upholst erolrs relaxing scent.</p>
-                                <span class="shape-mockup" style="right: 0; top: 0;"><img src="{% static 'assets/img/shapes/service-shape-4.png' %}" alt="service element"></span>
+                                <div class="icon-btn3"> <span class="icon"><img src="{{i.icon.url}}" alt="service-icon"></span></div>
+                                <h2 class="service-title"><a href="service.html">{{i.title|safe}}</a></h2>
+                                <p class="service-text">{{i.description}}</p>
+                                <span class="shape-mockup" style="right: 0; top: 0;"><img src="{{i.backgoung_image.url}}" alt="service element"></span>
                                 <div class="service-bg1">
-                                    <img src="{% static 'assets/img/bg/service-bg2.jpg' %}" alt="service image">
+                                    <img src="{{i.backgoung_image.url}}" alt="service image">
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6 service-style3">
+                    {% endfor %}
+                        <!-- <div class="col-lg-3 col-md-6 service-style3">
                             <div class="service-content border-right">
                                 <div class="icon-btn3"> <span class="icon"><img src="{% static 'assets/img/icon/service-icon-3-2.svg' %}" alt="service-icon"></span></div>
                                 <h2 class="service-title"><a href="service.html">Green Cleaning all</a></h2>
@@ -95,7 +97,7 @@
                                     <img src="{% static 'assets/img/bg/service-bg2.jpg' %}" alt="service image">
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -167,55 +169,56 @@
         <!-- About Area End -->
          <!-- Gallery Area start -->
          <div class="image-gallery">
+            {% for i in gallery%}
             <div class="image-gallery__col image-gallery__one wow animate__fadeInUp" data-wow-delay="0.25s">
-              <img src="{% static 'assets/img/gallery/gallery-img-2-1.jpg' %}" alt="image gallery">
-              <a href="{% static 'assets/img/gallery/gallery-img-2-1.jpg' %}" class="image-gallery__col--popup popup-image">
+              <img src="{{i.image.url}}" alt="{{i.image_name }}">
+              <a href="{{ i.image.url}}" class="image-gallery__col--popup popup-image">
                 <i class="fal fa-plus"></i>
               </a>
             </div>
-
             <div class="image-gallery__col image-gallery__two wow animate__fadeInUp" data-wow-delay="0.45s">
-              <img src="{% static 'assets/img/gallery/gallery-img-2-3.jpg' %}" alt="image gallery">
-              <a href="{% static 'assets/img/gallery/gallery-img-2-3.jpg' %}" class="image-gallery__col--popup popup-image">
+              <img src="{{ i.image.url}}" alt="{{i.image_name }}">
+              <a href="{{ i.image.url}}" class="image-gallery__col--popup popup-image">
                 <i class="fal fa-plus"></i>
               </a>
             </div>
             <div class="image-gallery__col image-gallery__three wow animate__fadeInUp" data-wow-delay="0.65s">
-              <img src="{% static 'assets/img/gallery/gallery-img-2-4.jpg' %}" alt="image gallery">
-              <a href="{% static 'assets/img/gallery/gallery-img-2-4.jpg' %}" class="image-gallery__col--popup popup-image">
+              <img src="{{ i.image.url}}" alt="{{i.image_name }}">
+              <a href="{{ i.image.url}}" class="image-gallery__col--popup popup-image">
                 <i class="fal fa-plus"></i>
               </a>
             </div>
             <div class="image-gallery__col image-gallery__four wow animate__fadeInUp" data-wow-delay="0.85s">
-              <img src="{%static 'assets/img/gallery/gallery-img-2-5.jpg' %}" alt="image gallery">
-              <a href="{%static 'assets/img/gallery/gallery-img-2-5.jpg' %}" class="image-gallery__col--popup popup-image">
+              <img src="{{ i.image.url}}" alt="{{i.image_name }}">
+              <a href="{{ i.image.url}}" class="image-gallery__col--popup popup-image">
                 <i class="fal fa-plus"></i>
               </a>
             </div>
             <div class="image-gallery__col image-gallery__five wow animate__fadeInUp" data-wow-delay="0.25s">
-              <img src="{% static 'assets/img/gallery/gallery-img-2-6.jpg' %}" alt="image gallery">
-              <a href="{% static 'assets/img/gallery/gallery-img-2-6.jpg' %}" class="image-gallery__col--popup popup-image">
+              <img src="{{ i.image.url}}" alt="{{i.image_name }}">
+              <a href="{{ i.image.url}}" class="image-gallery__col--popup popup-image">
                 <i class="fal fa-plus"></i>
               </a>
             </div>
             <div class="image-gallery__col image-gallery__six wow animate__fadeInUp" data-wow-delay="0.45s">
-              <img src="{% static 'assets/img/gallery/gallery-img-2-7.jpg' %}" alt="image gallery">
-              <a href="{% static 'assets/img/gallery/gallery-img-2-7.jpg' %}" class="image-gallery__col--popup popup-image">
+              <img src="{{ i.image.url}}" alt="{{i.image_name }}">
+              <a href="{{ i.image.url}}" class="image-gallery__col--popup popup-image">
                 <i class="fal fa-plus"></i>
               </a>
             </div>
             <div class="image-gallery__col image-gallery__seven wow animate__fadeInUp" data-wow-delay="0.65s">
-              <img src="{% static 'assets/img/gallery/gallery-img-2-8.jpg' %}" alt="image gallery">
-              <a href="{% static 'assets/img/gallery/gallery-img-2-8.jpg' %}" class="image-gallery__col--popup popup-image">
+              <img src="{{ i.image.url}}" alt="{{i.image_name }}">
+              <a href="{{ i.image.url}}" class="image-gallery__col--popup popup-image">
                 <i class="fal fa-plus"></i>
               </a>
             </div>
             <div class="image-gallery__col image-gallery__eight wow animate__fadeInUp" data-wow-delay="0.85s">
-              <img src="{% static 'assets/img/gallery/gallery-img-2-8.jpg' %}" alt="image gallery">
-              <a href="{% static 'assets/img/gallery/gallery-img-2-8.jpg' %}" class="image-gallery__col--popup popup-image">
+              <img src="{{ i.image.url}}" alt="{{i.image_name }}">
+              <a href="{{ i.image.url}}" class="image-gallery__col--popup popup-image">
                 <i class="fal fa-plus"></i>
               </a>
             </div>
+            {% endfor %}
          </div>
         <!-- Gallery Area End -->
         <!-- Service Area  -->
