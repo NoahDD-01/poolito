@@ -27,3 +27,20 @@ class Service1(models.Model):
 class Gallery(models.Model):
     image = models.ImageField(upload_to='gallery', blank=True ,null=True)
     image_name = models.CharField(max_length=20)
+
+class service2(models.Model):
+    title = RichTextField(null=True,blank=True)
+    created_at = models.DateField(auto_now_add=True)
+    updated_at = models.DateField(auto_now_add=True)
+
+class service3(models.Model):
+    title = RichTextField(null=True,blank=True)
+    created_at = models.DateField(auto_now_add=True)
+    updated_at = models.DateField(auto_now_add=True)
+
+class service4(models.Model):
+    title = RichTextField(null=True,blank=True)
+    icon = models.ImageField(upload_to='service4',null=True,blank=True)
+    image = models.ImageField(upload_to='service4',null=True ,blank=True)
+    description = models.TextField()
+

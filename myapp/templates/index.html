@@ -176,48 +176,6 @@
                 <i class="fal fa-plus"></i>
               </a>
             </div>
-            <div class="image-gallery__col image-gallery__two wow animate__fadeInUp" data-wow-delay="0.45s">
-              <img src="{{ i.image.url}}" alt="{{i.image_name }}">
-              <a href="{{ i.image.url}}" class="image-gallery__col--popup popup-image">
-                <i class="fal fa-plus"></i>
-              </a>
-            </div>
-            <div class="image-gallery__col image-gallery__three wow animate__fadeInUp" data-wow-delay="0.65s">
-              <img src="{{ i.image.url}}" alt="{{i.image_name }}">
-              <a href="{{ i.image.url}}" class="image-gallery__col--popup popup-image">
-                <i class="fal fa-plus"></i>
-              </a>
-            </div>
-            <div class="image-gallery__col image-gallery__four wow animate__fadeInUp" data-wow-delay="0.85s">
-              <img src="{{ i.image.url}}" alt="{{i.image_name }}">
-              <a href="{{ i.image.url}}" class="image-gallery__col--popup popup-image">
-                <i class="fal fa-plus"></i>
-              </a>
-            </div>
-            <div class="image-gallery__col image-gallery__five wow animate__fadeInUp" data-wow-delay="0.25s">
-              <img src="{{ i.image.url}}" alt="{{i.image_name }}">
-              <a href="{{ i.image.url}}" class="image-gallery__col--popup popup-image">
-                <i class="fal fa-plus"></i>
-              </a>
-            </div>
-            <div class="image-gallery__col image-gallery__six wow animate__fadeInUp" data-wow-delay="0.45s">
-              <img src="{{ i.image.url}}" alt="{{i.image_name }}">
-              <a href="{{ i.image.url}}" class="image-gallery__col--popup popup-image">
-                <i class="fal fa-plus"></i>
-              </a>
-            </div>
-            <div class="image-gallery__col image-gallery__seven wow animate__fadeInUp" data-wow-delay="0.65s">
-              <img src="{{ i.image.url}}" alt="{{i.image_name }}">
-              <a href="{{ i.image.url}}" class="image-gallery__col--popup popup-image">
-                <i class="fal fa-plus"></i>
-              </a>
-            </div>
-            <div class="image-gallery__col image-gallery__eight wow animate__fadeInUp" data-wow-delay="0.85s">
-              <img src="{{ i.image.url}}" alt="{{i.image_name }}">
-              <a href="{{ i.image.url}}" class="image-gallery__col--popup popup-image">
-                <i class="fal fa-plus"></i>
-              </a>
-            </div>
             {% endfor %}
          </div>
         <!-- Gallery Area End -->
@@ -227,8 +185,12 @@
                 <div class="row justify-content-between position-relative align-items-center">
                     <div class="col-lg-6 col">
                         <div class="title-area text-left wow animate__fadeInUp title-anime animation-style5" data-wow-delay="0.25s">
-                            <span class="sec-subtitle left-shape justify-content-center title-anime__title"> CLEANING SERVICE</span>
-                            <h2 class="sec-title title-anime__title text-white">Our Excellent Service</h2>
+                            {% for i in Service2 %}
+                            <span class="sec-subtitle left-shape justify-content-center title-anime__title">{{i.title|safe}}</span>
+                            {% endfor %}
+                            {% for i in Service3 %}
+                            <h2 class="sec-title title-anime__title text-white">{{i.title|safe}}</h2>
+                            {% endfor %}
                         </div>
                     </div>
                     <div class="col-lg-6 col-auto">
@@ -236,7 +198,7 @@
                             <div class="custom-arraw wow animate__fadeInUp" data-wow-delay="0.45s">
                                 <div class="icon-arraw slick-prev" data-slick-prev=".service-slider">
                                     <button class="icon-btn2">
-                                        <img src="{% static 'assets/img/icon/arraw-left.svg' %}" alt="icon">
+                                        <img src="{{}}" alt="icon">
                                     </button>
                                 </div>
                                 <div class="icon-arraw slick-next" data-slick-next=".service-slider">
