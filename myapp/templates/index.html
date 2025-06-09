@@ -193,12 +193,13 @@
                             {% endfor %}
                         </div>
                     </div>
+                  
                     <div class="col-lg-6 col-auto">
                         <div class="arraw-style1">
                             <div class="custom-arraw wow animate__fadeInUp" data-wow-delay="0.45s">
                                 <div class="icon-arraw slick-prev" data-slick-prev=".service-slider">
                                     <button class="icon-btn2">
-                                        <img src="{{}}" alt="icon">
+                                        <img src="{% static 'assets/img/icon/arraw-left.svg' %}" alt="icon">
                                     </button>
                                 </div>
                                 <div class="icon-arraw slick-next" data-slick-next=".service-slider">
@@ -209,24 +210,26 @@
                             </div>
                         </div>
                     </div>
+                   
                 </div>
+                {% for i in Service4 %}
                 <div class="row vs-carousel service-slider" data-slide-show="4" data-ml-slide-show="3" data-lg-slide-show="3" data-md-slide-show="2" data-autoplay="true" data-arrows="false">
                     <div class="col-lg-3 wow animate__fadeInUp" data-wow-delay="0.25s">
                         <div class="service-style4">
                             <div class="service-img">
                                 <a href="service.html">
-                                    <img src="{% static 'assets/img/service/service-img-3-1.jpg' %}" alt="Serevice Image" class="w-100">
+                                    <img src="{{ i.image.url }}" alt="Serevice Image" class="w-100">
                                 </a>
                                 <div class="service-icon">
                                     <span class="shape-mockup" style="left: -14px; top: -10px;"><img src="{% static 'assets/img/shapes/angle-left.png' %}" alt="counter element"></span>
                                     <span class="shape-mockup" style="right: -14px; top: -10px;"><img src="{% static 'assets/img/shapes/angle-right.png' %}" alt="counter element"></span>
-                                    <div class="icon-btn3"> <span class="icon"><img src="{% static 'assets/img/icon/service-icon-3-1.svg' %}" alt="service-icon"></span></div>
+                                    <div class="icon-btn3"> <span class="icon"><img src="{{ i.icon.url }}" alt="service-icon"></span></div>
                                 </div>
                             </div>
                             <div class="service-body">
                                 <div class="service-content">
-                                    <h2 class="service-title"><a href="service.html">room cleaning</a></h2>
-                                    <p class="service-text">Home Cleaning Maids & Office Cleaning Services concerned effort Satisfy</p>
+                                    <h2 class="service-title"><a href="service.html">{{ i.title|safe}}</a></h2>
+                                    <p class="service-text">{{ i.description }}</p>
                                 </div>
                                 <span class="shape-mockup" style="left: 0px; top: 0px;"><img src="{% static 'assets/img/shapes/service-shape-5.png' %}" alt="service element"></span>
                             </div>
@@ -236,18 +239,18 @@
                         <div class="service-style4">
                             <div class="service-img">
                                 <a href="service.html">
-                                    <img src="{% static 'assets/img/service/service-img-3-2.jpg' %}" alt="Serevice Image" class="w-100">
+                                    <img src="{{ i.image.url}}" alt="Serevice Image" class="w-100">
                                 </a>
                                 <div class="service-icon">
                                     <span class="shape-mockup" style="left: -14px; top: -10px;"><img src="{% static 'assets/img/shapes/angle-left.png' %}" alt="counter element"></span>
                                     <span class="shape-mockup" style="right: -14px; top: -10px;"><img src="{% static 'assets/img/shapes/angle-right.png' %}" alt="counter element"></span>
-                                    <div class="icon-btn3"> <span class="icon"><img src="{% static 'assets/img/icon/service-icon-3-2.svg' %}" alt="service-icon"></span></div>
+                                    <div class="icon-btn3"> <span class="icon"><img src="{{ i.icon.url }}" alt="service-icon"></span></div>
                                 </div>
                             </div>
                             <div class="service-body">
                                 <div class="service-content">
-                                    <h2 class="service-title"><a href="service.html">Kitchen Cleaning</a></h2>
-                                    <p class="service-text">Home Cleaning Maids & Office Cleaning Services concerned effort Satisfy</p>
+                                    <h2 class="service-title"><a href="service.html">{{ i.title|safe }}</a></h2>
+                                    <p class="service-text">{{ i.description }}</p>
                                 </div>
                                 <span class="shape-mockup" style="left: 0px; top: 0px;"><img src="{% static 'assets/img/shapes/service-shape-5.png' %}" alt="service element"></span>
                             </div>
@@ -257,20 +260,20 @@
                         <div class="service-style4">
                             <div class="service-img">
                                 <a href="service.html">
-                                    <img src="{% static 'assets/img/service/service-img-3-3.jpg' %}" alt="Serevice Image" class="w-100">
+                                    <img src="{{ i.image.url }}" alt="Serevice Image" class="w-100">
                                 </a>
                                 <div class="service-icon">
                                     <span class="shape-mockup" style="left: -14px; top: -10px;"><img src="{% static 'assets/img/shapes/angle-left.png' %}" alt="counter element"></span>
                                     <span class="shape-mockup" style="right: -14px; top: -10px;"><img src="{% static 'assets/img/shapes/angle-right.png' %}" alt="counter element"></span>
-                                    <div class="icon-btn3"> <span class="icon"><img src="{% static 'assets/img/icon/service-icon-3-1.svg' %}" alt="service-icon"></span></div>
+                                    <div class="icon-btn3"> <span class="icon"><img src="{{i.icon.url}}" alt="service-icon"></span></div>
                                 </div>
                             </div>
                             <div class="service-body">
                                 <div class="service-content">
-                                    <h2 class="service-title"><a href="service.html">Office Cleaning</a></h2>
-                                    <p class="service-text">Home Cleaning Maids & Office Cleaning Services concerned effort Satisfy</p>
+                                    <h2 class="service-title"><a href="service.html">{{i.title|safe}}</a></h2>
+                                    <p class="service-text">{{i.description}}</p>
                                 </div>
-                                <span class="shape-mockup" style="left: 0px; top: 0px;"><img src="{% static 'assets/img/shapes/service-shape-5.png" alt="service element"></span>
+                                <span class="shape-mockup" style="left: 0px; top: 0px;"><img src="{% static 'assets/img/shapes/service-shape-5.png' %}" alt="service element"></span>
                             </div>
                         </div>
                     </div>
@@ -278,18 +281,18 @@
                         <div class="service-style4">
                             <div class="service-img">
                                 <a href="service.html">
-                                    <img src="{% static 'assets/img/service/service-img-3-4.jpg' %}" alt="Serevice Image" class="w-100">
+                                    <img src="{{i.image.url}}" alt="Serevice Image" class="w-100">
                                 </a>
                                 <div class="service-icon">
                                     <span class="shape-mockup" style="left: -14px; top: -10px;"><img src="{% static 'assets/img/shapes/angle-left.png' %}" alt="counter element"></span>
                                     <span class="shape-mockup" style="right: -14px; top: -10px;"><img src="{% static 'assets/img/shapes/angle-right.png' %}" alt="counter element"></span>
-                                    <div class="icon-btn3"> <span class="icon"><img src="{% static 'assets/img/icon/service-icon-3-4.svg' %}" alt="service-icon"></span></div>
+                                    <div class="icon-btn3"> <span class="icon"><img src="{{i.icon.url}}" alt="service-icon"></span></div>
                                 </div>
                             </div>
                             <div class="service-body">
                                 <div class="service-content">
-                                    <h2 class="service-title"><a href="service.html">room cleaning</a></h2>
-                                    <p class="service-text">Home Cleaning Maids & Office Cleaning Services concerned effort Satisfy</p>
+                                    <h2 class="service-title"><a href="service.html">{{i.title|safe}}</a></h2>
+                                    <p class="service-text">{{i.description}}</p>
                                 </div>
                                 <span class="shape-mockup" style="left: 0px; top: 0px;"><img src="{% static 'assets/img/shapes/service-shape-5.png' %}" alt="service element"></span>
                             </div>
@@ -299,24 +302,25 @@
                         <div class="service-style4">
                             <div class="service-img">
                                 <a href="service.html">
-                                    <img src="{% static 'assets/img/service/service-img-3-5.jpg' %}" alt="Serevice Image" class="w-100">
+                                    <img src="{{i.image.url}}" alt="Serevice Image" class="w-100">
                                 </a>
                                 <div class="service-icon">
                                     <span class="shape-mockup" style="left: -14px; top: -10px;"><img src="{% static 'assets/img/shapes/angle-left.png' %}" alt="counter element"></span>
                                     <span class="shape-mockup" style="right: -14px; top: -10px;"><img src="{% static 'assets/img/shapes/angle-right.png' %}" alt="counter element"></span>
-                                    <div class="icon-btn3"> <span class="icon"><img src="{% static 'assets/img/icon/service-icon-3-1.svg' %}" alt="service-icon"></span></div>
+                                    <div class="icon-btn3"> <span class="icon"><img src="{{i.icon.url}}" alt="service-icon"></span></div>
                                 </div>
                             </div>
                             <div class="service-body">
                                 <div class="service-content">
-                                    <h2 class="service-title"><a href="service.html">room cleaning</a></h2>
-                                    <p class="service-text">Home Cleaning Maids & Office Cleaning Services concerned effort Satisfy</p>
+                                    <h2 class="service-title"><a href="service.html">{{i.title|safe}}</a></h2>
+                                    <p class="service-text">{{i.description}}</p>
                                 </div>
                                 <span class="shape-mockup" style="left: 0px; top: 0px;"><img src="{% static 'assets/img/shapes/service-shape-5.png' %}" alt="service element"></span>
                             </div>
                         </div>
                     </div>
                 </div>
+                {% endfor %}
             </div>
             <div class="common-line shape-mockup d-none d-xxl-block" style="top: -7px;">
                 <img src="{% static 'assets/img/shapes/line-shep.png' %}" alt="shapes">
@@ -328,23 +332,27 @@
             <div class="container">
                 <div class="row gx-60 z-index position-relative justify-content-center align-items-center">
                     <div class="col-lg-5 text-center text-xxl-start" >
+                        {% for i in reviewleft %}
                         <div class="video-box wow animate__fadeInUp" >
-                            <h2 class="video-title h4  title-anime animation-style2" data-wow-delay="0.3s">watch video</h2>
-                            <a href="https://www.youtube.com/watch?v=moYayPRgaY0" class="play-btn popup-video">
+                            <h2 class="video-title h4  title-anime animation-style2" data-wow-delay="0.3s">{{i.name|safe}}</h2>
+                            <a href="{{i.video.url}}" class="play-btn popup-video">
                                 <i class="fas fa-play"></i>
                             </a>
                             <span class="shape-mockup vs-slider-shape-1 d-md-block d-none" style="left: -55%; top: 0%;">
-                                <img src="{% static 'assets/img/shapes/cleaning-shapes-1-2.png' %}" alt="cleaning shapes">
+                                <img src="" alt="">
                             </span>
                         </div>
+                        {% endfor %}
                     </div>
                     <div class="col-lg-7">
                         <div class="testi-body">
                             <div class="title-inner">
+                                {% for i in reviewtitle %}
                                 <div class="title-area text-left wow animate__fadeInUp title-anime animation-style5" data-wow-delay="0.25s">
-                                    <span class="sec-subtitle  left-shape justify-content-center title-anime__title">TESTIMONIAL</span>
-                                    <h2 class="sec-title title-anime__title">Our Client Are <span class="title-highlight">Saying</span> About us</h2>
+                                    <span class="sec-subtitle  left-shape justify-content-center title-anime__title">{{i.name|safe}}</span>
+                                    <h2 class="sec-title title-anime__title">{{i.title|safe}}</h2>
                                 </div>
+                                {% endfor %}
                                 <div class="arraw-style1">
                                     <div class="custom-arraw wow animate__fadeInUp" data-wow-delay="0.45s">
                                         <div class="icon-arraw slick-prev" data-slick-prev=".testi-slider2">
@@ -360,12 +368,13 @@
                                     </div>
                                 </div>
                             </div>
+                            {% for i in review%}
                             <div class="testi-items wow animate__fadeInUp" data-wow-delay="0.35s">
                                 <div class="vs-carousel testi-slider2" data-fade="true">
                                     <div class="testi-content">
                                         <div class="vs-testi__top">
                                             <div class="vs-testi__author">
-                                                <h3 class="vs-testi__title">alaxander pall</h3>
+                                                <h3 class="vs-testi__title">{{i.name|safe}}</h3>
                                                 <div class="star-rating">
                                                     <i class="fa-solid fa-star"></i>
                                                     <i class="fa-solid fa-star"></i>
@@ -376,15 +385,14 @@
                                             </div>
                                         </div>
                                         <p class="testi-text">
-                                            “ When you work with Los Angeles House Cleaners Refal Agen cleaning breathe easy because your home will 
-                                            soon When yowork with Angeles House Cleaners Referal Agency cleaning breathe ” 
+                                           {{i.reviewnote}}
                                         </p>
                                         <div class="vs-testi__top mb-0">
                                             <div class="vs-testi__image">
-                                                <img class="img1" src="{% static 'assets/img/testimonial/testi-1-1.png' %}" alt="testimonials">
+                                                <img class="img1" src="{{i.image.url}}" alt="testimonials">
                                             </div>
                                             <div class="vs-testi__author">
-                                                <h3 class="vs-testi__title">alaxander pall</h3>
+                                                <h3 class="vs-testi__title">{{i.name|safe}}</h3>
                                             </div>
                                             <span class="quote-icon"><i class="fas fa-quote-left"></i></span>
                                         </div>
@@ -418,14 +426,17 @@
                                     </div>                                           
                                 </div>
                             </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
             </div>
             <div class="testi-shape">
+                {% for i in reviewleft %}
                 <span class="testi-bg">
-                    <img src="{% static 'assets/img/bg/book-bg-1-2.jpg' %}" alt="testi element">
+                    <img src="{{i.image.url}}" alt="testi element">
                 </span>
+                {% endfor %}
             </div>
             <span class="shape-mockup d-xl-block d-none wow animate__fadeInLeft" style="right: 0px; top: 60px;"><img src="{% static 'assets/img/shapes/map-shape-2.png' %}" alt="Book element"></span>
             <span class="shape-mockup z-index custom-sheap wow animate__fadeInRight" data-wow-delay="0.90s" style="right: 0px; bottom: 80px;"><img src="{% static 'assets/img/shapes/service-shape-man2.png' %}" alt="service element"></span>

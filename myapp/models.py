@@ -44,3 +44,16 @@ class service4(models.Model):
     image = models.ImageField(upload_to='service4',null=True ,blank=True)
     description = models.TextField()
 
+class ReviewLeft(models.Model):
+    name = RichTextField(null=True,blank=True)
+    image = models.ImageField(upload_to='ReviewLeft', null=True,blank=True)
+    video = models.URLField(null=True,blank=True)
+
+class Reviewtitle(models.Model):
+    name = RichTextField(null=True,blank=True)
+    title = RichTextField(null=True,blank=True)
+
+class Review(models.Model):
+    name = RichTextField(null=True,blank=True)
+    reviewnote = models.TextField()
+    image = models.ImageField(upload_to='review', null=True ,blank=True)
