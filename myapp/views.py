@@ -36,3 +36,8 @@ def blog_view(request):
 
 def service_view(request):
     return render(request,'service.html')
+
+def blog_detail(request):
+    return render(request,'blog_detail.html')
+def team(request):
+    return render()
