@@ -40,4 +40,8 @@ def service_view(request):
 def blog_detail(request):
     return render(request,'blog_detail.html')
 def team(request):
-    return render()
+    return render(request,'team.html')
+def team_detail(request):
+    return render(request,'team_detail.html')
+def contact(request):
+    return render(request,'contact.html')
