@@ -22,14 +22,16 @@
             </div>
         </div>
         <!-- Team Area  -->
+        
          <section class="team-layout2 space">
             <div class="container">
                 <div class="row g-5">
-                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 wow animate__fadeInUp" data-wow-delay="0.25s">
+                    {% for i in Team %}
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 wow animate__fadeInUp" data-wow-delay="0.25s">       
                         <div class="vs-team__style1">
                             <div class="vs-team__img">
                                 <a href="team-details.html">
-                                    <img src="{% static 'assets/img/team/team-img-1-1.png' %}" alt="Team Image">
+                                    <img src="{{i.image.url}}" alt="Team Image">
                                 </a>
                                 <div class="vs-team__social--media">
                                     <a href="javascript:void(0)"><i class="fab fa-facebook-f"></i></a>
@@ -38,16 +40,17 @@
                                 </div>
                             </div>
                             <div class="vs-team__content">
-                                <h2 class="vs-team__title"><a href="/team_detail/">rodja man</a></h2>
-                                <p class="vs-team__subtitle">Supervisor</p>
+                                <h2 class="vs-team__title"><a href="/team_detail/">{{i.name|safe}}</a></h2>
+                                <p class="vs-team__subtitle">{{i.position}}</p>
                             </div>
                         </div>
                     </div>
+                     {% endfor %}
                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 wow animate__fadeInUp" data-wow-delay="0.35s">
                         <div class="vs-team__style1">
                             <div class="vs-team__img">
                                 <a href="team-details.html">
-                                    <img src="{% static 'assets/img/team/team-img-1-2.png' %}" alt="Team Image">
+                                    <img src="{{i.image.url}}" alt="Team Image">
                                 </a>
                                 <div class="vs-team__social--media">
                                     <a href="javascript:void(0)"><i class="fab fa-facebook-f"></i></a>
@@ -174,6 +177,7 @@
             <span class="shape-mockup" style="right: 0; top: 0px;"><img src="{% static 'assets/img/shapes/service-shape-1.png'  %}" alt="team element"></span>
             <span class="shape-mockup z-index-n1" style="left: 0; bottom: 0px;"><img src="{% static 'assets/img/shapes/team-shep3.png ' %}" alt="team element"></span>
          </section>
+        
   <!--********************************
 			End Main Content
 	******************************** -->

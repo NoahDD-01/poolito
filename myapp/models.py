@@ -57,3 +57,14 @@ class Review(models.Model):
     name = RichTextField(null=True,blank=True)
     reviewnote = models.TextField()
     image = models.ImageField(upload_to='review', null=True ,blank=True)
+
+class team(models.Model):
+    name = RichTextField(null=True ,blank=True)
+    image = models.ImageField(upload_to='team',null=True,blank=True)
+    aboutus = models.TextField()
+    position = models.CharField(max_length=100)
+    age  = models.IntegerField(max_length=30)
+    phone  = models.IntegerField(max_length=40)
+    email = models.CharField(max_length=100)
+    Address = models.CharField(max_length=100)
+    exp = models.CharField(max_length=50)

@@ -39,9 +39,17 @@ def service_view(request):
 
 def blog_detail(request):
     return render(request,'blog_detail.html')
-def team(request):
-    return render(request,'team.html')
+def team_view(request):
+    Team = team.objects.all()
+    contex = {
+        'Team':Team
+    }
+    return render(request,'team.html',contex)
 def team_detail(request):
-    return render(request,'team_detail.html')
+    Team = team.objects.all().order_by('id')
+    contex = {
+        'Team':Team
+    }
+    return render(request,'team_detail.html',contex)
 def contact(request):
     return render(request,'contact.html')
